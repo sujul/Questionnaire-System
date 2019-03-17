@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD
+3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.edu.zjut.po.Choice" table="choice"
+		catalog="hibernatedb">
+		<id name="choiceId" type="int">
+			<column name="choiceID" />
+			<generator class="increment" />
+		</id>
+		<property name="option1" type="string">
+			<column name="option1" length="10" />
+		</property>
+		<property name="option2" type="string">
+			<column name="option2" length="10" />
+		</property>
+		<property name="option3" type="string">
+			<column name="option3" length="10" />
+		</property>
+		<property name="option4" type="string">
+			<column name="option4" length="10" />
+		</property>
+		<!-- <set name="questions" inverse="true" cascade="all" lazy="false">
+			<key column="choi_id" />
+			<one-to-many class="cn.edu.zjut.po.Question" />
+		</set> -->
+	</class>
+</hibernate-mapping>

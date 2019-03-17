@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="strutsBean" extends="struts-default" namespace="/">
+		<action name="login" class="cn.edu.zjut.action.UserAction" method="login">
+            <result name="user">/survey.jsp</result>
+            <result name="admin">/manageUserCourse.jsp</result>
+            <result name="fail">/login.jsp</result>
+        </action>
+        <action name="findQuestions" class="cn.edu.zjut.action.QuestionAction" method="findQuestions">
+            <result name="success">/survey.jsp</result>
+        </action>
+        <action name="findResults" class="cn.edu.zjut.action.ResultAction" method="findResults">
+            <result name="success">/info.jsp</result>
+        </action>
+        <action name="addResults" class="cn.edu.zjut.action.ResultAction" method="addResults">
+            <result name="success">/addResultsSuccess.jsp</result>
+        </action>
+        <action name="Couresults" class="cn.edu.zjut.action.ResultAction" method="Couresults">
+            <result name="success">/CouresultsSuccess.jsp</result>
+        </action>
+        <action name="findUser" class="cn.edu.zjut.action.UserAction" method="findUser">
+            <result name="success">/findUserSuccess.jsp</result>
+            <result name="fail">/findUserFail.jsp</result>
+        </action>
+        <action name="UseraddCour" class="cn.edu.zjut.action.UserAction" method="addCour">
+            <result name="success">/findUserSuccess.jsp</result>
+        </action>
+        <action name="UserdelCour" class="cn.edu.zjut.action.UserAction" method="delCour">
+            <result name="success">/findUserSuccess.jsp</result>
+        </action>
+        <action name="findCourse" class="cn.edu.zjut.action.CourseAction" method="findCourse">
+            <result name="success">/findCourseSuccess.jsp</result>
+            <result name="fail">/findCourseFail.jsp</result>
+        </action>
+        <action name="CourseaddQues" class="cn.edu.zjut.action.CourseAction" method="addQues">
+            <result name="success">/findCourseSuccess.jsp</result>
+        </action>
+        <action name="CoursedelQues" class="cn.edu.zjut.action.CourseAction" method="delQues">
+            <result name="success">/findCourseSuccess.jsp</result>
+        </action>
+        <action name="searchResults" class="cn.edu.zjut.action.ResultAction" method="searchResults">
+            <result name="success">/searchResultsSuccess.jsp</result>
+        </action>
+        <action name="countResults" class="cn.edu.zjut.action.ResultAction" method="countResults">
+            <result name="success">/countResultsSuccess.jsp</result>
+        </action>
+	</package>
+</struts>

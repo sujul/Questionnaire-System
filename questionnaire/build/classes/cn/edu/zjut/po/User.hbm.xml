@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD
+3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.edu.zjut.po.User" table="user"
+		catalog="hibernatedb">
+		<id name="userId" type="int">
+			<column name="userID" />
+			<generator class="increment" />
+		</id>
+		<property name="username" type="string">
+			<column name="username" length="20" unique="true" />
+		</property>
+		<property name="password" type="string">
+			<column name="password" length="20" />
+		</property>
+		<property name="type" type="java.lang.Boolean">
+			<column name="type" />
+		</property>
+        <set name="courses" table="user_cour" cascade="all" lazy="false">
+            <key column="user_id" />
+            <many-to-many column="cour_id"
+                class="cn.edu.zjut.po.Course" />
+        </set>
+	</class>
+</hibernate-mapping>

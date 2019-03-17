@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD
+3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.edu.zjut.po.Course" table="course"
+		catalog="hibernatedb">
+		<id name="courseId" type="int">
+			<column name="courseID" />
+			<generator class="increment" />
+		</id>
+		<property name="cname" type="string">
+			<column name="cname" length="20" />
+		</property>
+        <set name="users" table="user_cour" inverse="true" cascade="all"
+            lazy="false">
+            <key column="cour_id" />
+            <many-to-many column="user_id"
+                class="cn.edu.zjut.po.User" />
+        </set>
+        <set name="questions" table="cour_ques" cascade="all"
+            lazy="false">
+            <key column="cour_id" />
+            <many-to-many column="ques_id"
+                class="cn.edu.zjut.po.Question" />
+        </set>
+	</class>
+</hibernate-mapping>
